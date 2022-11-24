@@ -1,0 +1,64 @@
+@use '../../globalStyles'
+
+.mainContainer
+  padding-top: 20px
+  width: 100%
+  height: 100%
+  flex-direction: row
+  justify-content: center
+  align-items: flex-start
+
+%modalContainer
+  background-color: rgba(36, 39, 58, .95)
+  width: 100%
+  justify-content: flex-end
+  align-items: center
+  position: absolute
+  bottom: 0
+  z-index: 1000
+
+.modalStyle
+  @extend %modalContainer
+  height: 67%
+
+.defaultTypeModalStyle
+  @extend %modalContainer
+  height: 49%
+
+.whiteLine
+  width: 35%
+  height: 5px
+  background-color: rgba(255,255,255 , 0.5)
+  position: absolute
+  top: 20px
+  border-radius: 20px
+
+.titleStyle
+  font-family: globalStyles.$montserrat-900
+  font-size: 24px
+  color: globalStyles.$bg-color-white
+  width: 70%
+  text-align: center
+  padding-bottom: 10%
+
+.textInsideModal
+  font-family: globalStyles.$montserrat-600
+  font-size: 14px
+  text-align: center
+  color: globalStyles.$bg-color-white
+  width: 70%
+  line-height: 24px
+  padding-bottom: 10%
+
+.buttonsContainer
+  width: 100%
+  justify-content: center
+  align-items: center
+  padding-bottom: 15%
+
+.guestPressable
+  padding-top: 20px
+  color: globalStyles.$font-color-white
+  border-bottom-color: globalStyles.$font-color-white
+  border-bottom-width: 1px
+  font-family: globalStyles.$montserrat-500

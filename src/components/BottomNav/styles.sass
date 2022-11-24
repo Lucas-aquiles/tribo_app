@@ -1,0 +1,25 @@
+@use '../../globalStyles'
+
+.container
+  background-color: globalStyles.$font-color-primary
+  flex-direction: row
+  height: 70px
+  width: 100%
+  align-items: center
+
+@mixin iconButton($backColor: globalStyles.$font-color-primary, $borderW: 0px)
+  background-color: $backColor
+  border-width: $borderW
+  align-self: center
+  padding: 8px
+  border-radius: 100px
+  border-color: #fff
+
+.iconFocused
+  @include iconButton($backColor: #FE016B, $borderW: 2px)
+
+.iconUnfocused
+  @include iconButton
+
+.tabBar
+  flex: 1

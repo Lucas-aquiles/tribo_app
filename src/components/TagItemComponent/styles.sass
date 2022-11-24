@@ -1,0 +1,32 @@
+@use '../../globalStyles'
+
+$strongPink: #FE016B
+$lightBlue: #02BDD0
+
+%tagContainer
+  padding: .2rem .9rem
+  border-radius: .6rem
+  margin-right: .5rem
+  margin-left: 1.8rem
+  margin-bottom: .5rem
+
+%tagText
+  font-family: globalStyles.$montserrat-500
+  font-size: 14px
+
+.textSelected
+  @extend %tagText
+  color: #fff
+
+.text
+  @extend %tagText
+  color: $lightBlue
+
+.itemSelected
+  @extend %tagContainer
+  background-color: $strongPink
+  border: 2px solid rgba(0,0, 0, 0)
+.item
+  @extend %tagContainer
+  border: 2px solid $lightBlue
+  background-color: #F4F5FA
