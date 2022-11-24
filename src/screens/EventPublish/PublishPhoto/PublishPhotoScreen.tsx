@@ -11,7 +11,7 @@ import Appstyles from './PublishPhotoStyle.sass';
 import ImagePicker from 'react-native-image-crop-picker';
 
 
-const PublishPhotoScreen = () => {
+const PublishPhotoScreen = ({navigation}) => {
   const [photo, setPhoto] = useState<string|undefined>(undefined);
   const {width, height} = useWindowDimensions();
   
@@ -24,6 +24,7 @@ const PublishPhotoScreen = () => {
     }).then(photo => {
       setPhoto(photo.path);
     });
+    navigation.navigate('Publish')
   };
   
   const selectImgFromGallery = () => {

@@ -11,7 +11,7 @@ import ButtonComponent from '../../../components/Button';
 import InputText from '../../../components/Input';
 import {err} from 'react-native-svg/lib/typescript/xml';
 
-const VeriFyAcount= ()=> {
+const VeriFyAcount= ({navigation})=> {
   const [code, setCode] = useState('');
   const [verify, setVerify] = useState(false);
   const [errors, setErrors] = useState(false);
@@ -56,7 +56,11 @@ const VeriFyAcount= ()=> {
           {errors ? <Text>Ingresa el codigo de seguridad</Text> : null}
         </View>
         <View style={Appstyles.codButton}>
-          <ButtonComponent txtBtn="Verificar codigo" onPress={onSubmit} />
+          <ButtonComponent txtBtn="Verificar codigo"
+          //  onPress={onSubmit}
+           onPress={() => navigation.navigate('VerifyEmail')}
+
+           />
         </View>
         <View style={Appstyles.codResend}>
           <Text>Reenviar codigo de verificacion</Text>

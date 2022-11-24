@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import InputText from '../../../components/Input';
 import ButtonInterface from '../../../components/Button';
 
-const VerifyEmail = () => {
+const VerifyEmail = ({navigation}) => {
   const [alert, setAlert] = useState(false);
  let cc_data = [
     'Si omites la verificación de tu dirección',
@@ -38,7 +38,7 @@ const VerifyEmail = () => {
           </Text>
         </View>
       </View>
-      <Inputs />
+      <Inputs navigation={navigation}/>
       <TouchableHighlight onPress={() => AlertPressed()}>
         <Text style={Appstyles.VerifyEmailBody_Option}>
           Omitir verificacion
@@ -57,7 +57,7 @@ const VerifyEmail = () => {
   );
 };
 
-const Inputs = () => {
+const Inputs = ({navigation}) => {
   const [state, setState] = useState<boolean>(false);
   function doThings(){
     console.log("hacer algo")
@@ -150,7 +150,10 @@ const Inputs = () => {
             />
             {errors.pc && touched.pc ? <Text>{errors.pc}</Text> : null}
           </View>
-          <ButtonInterface txtBtn="Cargue imagen para verificar" onPress = {doThings}/>
+          <ButtonInterface txtBtn="Cargue imagen para verificar"
+          onPress={() => navigation.navigate('PublishScreen')}
+          // onPress = {doThings}
+          />
         </>
       )}
     </Formik>

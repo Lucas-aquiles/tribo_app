@@ -15,7 +15,7 @@ import * as Yup from 'yup';
 import InputText from '../../../components/Input';
 import ButtonComponent from '../../../components/Button';
 
-const CountEmail = () => {
+const CountEmail = ({navigation}) => {
   const [state, setState] = useState<boolean>(false);
 
   const SignupSchema = state
@@ -189,7 +189,8 @@ const CountEmail = () => {
 
                 <ButtonComponent
                   txtBtn="Crea tu cuenta"
-                  onPress={handleSubmit}
+                  // onPress={handleSubmit}
+                  onPress={() => navigation.navigate('VeriFyAcount')}
                   style={stylesCountEmail.ButtonAux}
                 />
 

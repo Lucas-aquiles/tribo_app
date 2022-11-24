@@ -17,7 +17,7 @@ import {MapComponent, ButtonComponent} from '../../../components';
 import {useEffect, useState} from 'react';
 import Geolocation from '@react-native-community/geolocation';
 
-export default function Publish({navigator}) {
+export default function Publish() {
   const {width, height} = useWindowDimensions();
   let fecha = moment().format('DD MMMM YYYY, h:mm A');
   //Geolocalizacion Telefono

@@ -36,7 +36,7 @@ const titles_outer = [
   ],
 ];
 
-const PublishScreen = () => {
+const PublishScreen = ({navigation}) => {
   return (
     <View style={styles.PublishScreenBody}>
       <View style={styles.PublishScreenHeader}>
@@ -52,8 +52,8 @@ const PublishScreen = () => {
           {titles_outer[0].map(function (titles_inner) {
             return (
               <View style={styles.CategoryRow} key={titles_inner[0]}>
-                <Category title={titles_inner[1]} />
-                <Category title={titles_inner[2]} />
+                <Category title={titles_inner[1]}  navigation={navigation}/>
+                <Category title={titles_inner[2]} navigation={navigation} />
               </View>
             );
           })}
@@ -63,8 +63,8 @@ const PublishScreen = () => {
           {titles_outer[1].map(function (titles_inner) {
             return (
               <View style={styles.CategoryRow} key={titles_inner[0]}>
-                <Category title={titles_inner[1]} />
-                <Category title={titles_inner[2]} />
+                <Category title={titles_inner[1]} navigation={navigation} />
+                <Category title={titles_inner[2]}  navigation={navigation}/>
               </View>
             );
           })}
@@ -74,15 +74,12 @@ const PublishScreen = () => {
   );
 };
 
-const Category = props => {
-  let title = props.title;
+const Category = ({title, navigation}) => {
+  // let title = props.title;
   let icon = getIconFromName(title);
-
   return (
     <Pressable
-      onPress={() => {
-        console.log(title);
-      }}
+    onPress={() => navigation.navigate('PublishPhotoScreen')}
       style={styles.Category}>
       <View style={styles.CategoryIcon}>{icon}</View>
       <Text style={styles.CategoryTitle}>{title}</Text>
